@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript" src="three.js"></script>
+        <script>
+            function init(){
+                //renderer
+                var renderer = new THREE.WebGLRenderer({canvas: document.getElementById('mainCanvas'),
+                                                        antialias: true,
+                                                        precision: "highp"});
+                renderer.setClearColor(0x000000);
+                //scene
+                var scene = new THREE.Scene();
+                //camera
+                var camera = new THREE.OrthographicCamera(-8,8,6,-6,1,100);
+                camera.position.set(8,6,10);
+                camera.lookAt(scene.position);
+                scene.add(camera);
+                //axes
+                var axes = new THREE.AxisHelper(20);
+                scene.add(axes);
+                //place
+                var planeGeometry = new THREE.PlaneGeometry(15, 10);
+                var planeMaterial = new THREE.MeshLambertMaterial({color: 0xcccccc});
+                var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+
+                plane.rotation.x = -0.5 * Math.PI;
+                plane.position.x = 0;
+                plane.position.y = -1;
+                plane.position.z = 1;
+                scene.add(plane);
+                // create a new cube
+                var geometry = new THREE.Geometry();
+                geometry.vertices.push(new THREE.Vector3(2, 0, 0));
+                geometry.vertices.push(new THREE.Vector3(2, 2, 0));
+                geometry.vertices.push(new THREE.Vector3(1, 2, 0));
+                geometry.vertices.push(new THREE.Vector3(0, 1, 0));
+                geometry.vertices.push(new THREE.Vector3(0, 0, 0));
+                // 
+                geometry.vertices.push(new THREE.Vector3(2, 0, 2));
+                geometry.vertices.push(new THREE.Vector3(2, 2, 2));
+                geometry.vertices.push(new THREE.Vector3(1, 2, 2));
+                geometry.vertices.push(new THREE.Vector3(0, 1, 2));
+                geometry.vertices.push(new THREE.Vector3(0, 0, 2));
+                //plane1
+                geometry.faces.push(new THREE.Face3(0,1,4));
+                geometry.faces.push(new THREE.Face3(1,2,4));
+                geometry.faces.push(new THREE.Face3(2,3,4));
+                //..
+                geometry.faces.push(new THREE.Face3(5,6,9));
+                geometry.faces.push(new THREE.Face3(6,7,9));
+                geometry.faces.push(new THREE.Face3(7,8,9));
+                //..
+                geometry.faces.push(new THREE.Face3(0,1,5));
+                geometry.faces.push(new THREE.Face3(1,6,5));
+                //..
+                geometry.faces.push(new THREE.Face3(0,4,5));
+                geometry.faces.push(new THREE.Face3(4,5,9));
+                //..
+                geometry.faces.push(new THREE.Face3(3,4,8));
+                geometry.faces.push(new THREE.Face3(4,8,9));
+                //..
+                geometry.faces.push(new THREE.Face3(2,3,7));
+                geometry.faces.push(new THREE.Face3(3,8,7));
+                //..
+                geometry.faces.push(new THREE.Face3(1,2,7));
+                geometry.faces.push(new THREE.Face3(1,7,6));
+                //
+                var vehicleMaterial = new THREE.MeshLambertMaterial({color:0xffffff,wireframe:false});
+                var cube = new THREE.Mesh(geometry,vehicleMaterial);
+                var cube2 = new THREE.Mesh(new THREE.CubeGeometry(4,1,2),vehicleMaterial);
+                var torus = new THREE.TorusGeometry(0.5, 0.2, 12, 18);
+                var wheel1 = new THREE.Mesh(torus,vehicleMaterial);
+                var wheel2 = new THREE.Mesh(torus,vehicleMaterial);
+                var wheel3 = new THREE.Mesh(torus,vehicleMaterial);
+                var wheel4 = new THREE.Mesh(torus,vehicleMaterial);
+                cube.position.set(-2,0,0);
+                cube2.position.set(2,0.5,1);
+                wheel1.position.set(-1,0,0);
+                wheel2.position.set(-1,0,2);
+                wheel3.position.set(2,0,0);
+                wheel4.position.set(2,0,2);
+                scene.add(cube);
+                scene.add(cube2);
+                scene.add(wheel1);
+                scene.add(wheel2);
+                scene.add(wheel3);
+                scene.add(wheel4);
+                
+                //ambient light
+                var ambientLight = new THREE.AmbientLight(0x666666); 
+                scene.add(ambientLight);
+                //directional light
+                var directionalLight = new THREE.DirectionalLight(0x666666); 
+                directionalLight.position.set(5,10,10); 
+                scene.add(directionalLight);
+                
+                renderer.render(scene,camera);
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <canvas id="mainCanvas" width="400px" height="300px"></canvas>
+    </body>
+</html>
