@@ -1,0 +1,524 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Xiao Wei Task6 Demo</title>
+        <style>
+            body{
+                width: 980px;
+                height: 1386px;
+                position: relative;
+            }
+            #left{
+                position: absolute;
+                top: 0;
+                left: 44px;
+                height: 61px;
+                width: 110px;
+                background-color: rgb(213,93,92);
+            }
+            #left span{
+                position: absolute;
+                bottom: 4px;
+                left: 4px;
+                font-family: SimHei;
+                font-size: 12px;
+                color: #fff;
+            }
+            #right{
+                position: absolute;
+                top: 0;
+                right: 44px;
+                height: 61px;
+                width: 110px;
+                background-color: #fff;
+            }
+            #right span{
+                position: absolute;
+                bottom: 4px;
+                right: 4px;
+                font-family: SimHei;
+                font-size: 12px;
+                color: #d45d5c;
+            }
+            header hr{
+                position: absolute;
+                top: 61px;
+                left: 44px;
+                height: 0;
+                width: 892px;
+                border-top: 2px solid #938e8c;
+                margin: 0;
+            }
+            footer hr{
+                position: absolute;
+                bottom: 30px;
+                left: 44px;
+                height: 0;
+                width: 892px;
+                border-top: 2px solid #938e8c;
+                margin: 0;
+            }
+            #figure1{
+                position: absolute;
+                top: 97px;
+                left: 44px;
+                margin: 0;
+                width: 641px;
+                height: 301px;
+            }
+            #figure1_1{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 641px;
+                height: 301px;
+            }
+            #figure1_2{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 191px;
+                height: 301px;
+                opacity: 0.5;
+                background-color: rgb(159,197,172);
+            }
+            #figure1_3{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 191px;
+                height: 301px;
+                opacity: 0.5;
+                background-color: rgb(228,185,192);
+            }
+            #top-right{
+                position: absolute;
+                top: 97px;
+                right: 44px;
+                height: 301px;
+                width: 203px;
+            }
+            #top-right div{
+                position: absolute;
+                bottom: 0;
+            }
+            #top-right hr{
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                height: 0;
+                width: 203px;
+                border-top: 2px solid #cc8091;
+                margin: 0;
+            }
+            #p1,#p2{
+                font-family:'Microsoft YaHei';
+                font-variant:small-caps;
+                font-size: 24px;
+                margin: 0;
+                text-decoration: underline;
+            }
+            
+            #p3{
+                font-family:'KaiTi';
+                font-size: 12px;
+                margin: 0;
+                color: #676767;
+                font-style: italic;
+            }
+            #p4{
+                font-family:'Microsoft YaHei';
+                
+                font-size: 116px;
+                margin: 0;
+                color: #75b86b;
+                
+            }
+            #p5{
+                position: absolute;
+                bottom: -5px;
+                font-family:'Microsoft YaHei';
+                font-size: 55px;
+                margin: 0;
+                color: #cc8091;
+            }
+            #p6{
+                position: absolute;
+                bottom: 18px;
+                left: 80px;
+                font-family:'Microsoft YaHei';
+                font-size: 21px;
+                margin: 0;
+                color: #cc8091;
+            }
+            #p7{
+                position: absolute;
+                bottom: 8px;
+                left: 80px;
+                font-family:'Microsoft YaHei';
+                font-size: 12px;
+                margin: 0;
+                color: #cc8091;
+            }
+            #middle{
+                position: absolute;
+                top: 438px;
+                left: 44px;
+                width: 641px;
+            }
+            #middle_left{
+                float: left;
+                width: 40%;
+            }
+            #middle_center{
+                margin-left: 40%;
+                margin-right: 25%;
+            }
+            #middle_right{
+                float: right;
+                width: 25%;
+            }
+            .middle_head{
+                margin: 0;
+                font-size: 16px;
+                font-family: 'Microsoft YaHei';
+                font-weight: bold;
+                text-decoration: underline;
+            }
+            #middle_left .middle_head{
+                color: #418c59;
+            }
+            #middle_center .middle_head{
+                color: #d2994f;
+            }
+            #middle_right .middle_head{
+                color: #cc7680;
+            }
+            .middle_content{
+                margin: 0;
+                padding-right:18px;
+                font-size: 12px;
+                color: #231815;
+                font-family: 'Microsoft YaHei';
+                line-height: 16px;
+                opacity: 0.7;
+            }
+            #middle_right_bottom{
+                position: absolute;
+                left: 75%;
+                bottom: 0;
+            }
+            #middle_right_bottom p{
+                padding: 0;
+                margin: 0;
+                font-size:12px;
+                color: #231815;
+                font-family: 'Microsoft YaHei';
+                line-height: 16px;
+                opacity: 0.7;
+            }
+            #middle_right_bottom p span{
+                color: #cd4a48;
+                font-style: oblique;
+            }
+            #bottom_left{
+                position: absolute;
+                top: 680px;
+                left: 44px;
+                width: 415px;
+                
+            }
+            #bottom_left_h1e{
+                font: bold 42px SimHei;
+                text-transform: uppercase;
+                margin: 0 0 16px 0;
+                color: #11456b;
+            }
+            #bottom_left_h1e span{
+                font: bold oblique 72px SimHei;
+                color: #f5e327;
+            }
+            #bottom_left_h1c{
+                font: bold 33px SimHei;
+                margin: 0;
+                color: #11456b;
+            }
+            #hottom_left_hr{
+                width: 415px;
+                height: 0;
+                margin: 18px 0;
+                padding: 0;
+                border-top: 2px solid #11456b;
+            }
+            #bottom_left p{
+                font: 12px SimSun;
+                color: #767777;
+                margin: 0 0;
+            }
+            #bottom_left p:nth-child(5),#bottom_left p:nth-child(6){
+                text-indent: 2em;
+            }
+            #bottom_left p:nth-child(4)::first-letter{
+                font: 70px 'Microsoft YaHei';
+                color: #f5e327;
+                float: left;
+                margin: -10px 5px -10px 0;
+            }
+            #bottom_left p img{
+                float: right;
+                margin: 20px 0 20px 20px;
+            }
+            #bottom_right{
+                position: absolute;
+                right: 44px;
+                top: 680px;
+                width: 458px;
+            }
+            #bottom_right figure{
+                margin: 0;
+                position: relative;
+                width: 458px;
+                height: 257px;
+            }
+            #bottom_right figure img{
+                margin: 0;
+                width: 458px;
+                height: 257px;
+            }
+            #bottom_right figure div{
+                position: absolute;
+                bottom: 0;
+                margin: 0;
+                width: 458px;
+                height: 61px;
+                background: #000;
+                opacity: 0.5;
+            }
+            #bottom_right figure p:nth-child(3){
+                position: absolute;
+                left: 62px;
+                bottom: 8px;
+                margin:0;
+                font: 26px 'Microsoft YaHei';
+                color: #fff;
+                border-left: 3px solid #72b16a;
+                padding-left: 12px;
+                line-height: 44px;
+            }
+            #bottom_right figure p:nth-child(4){
+                position: absolute;
+                left: 190px;
+                bottom: 14px;
+                margin:0;
+                font: oblique 12px 'Microsoft YaHei';
+                color: #72b16a;
+            }
+            #bottom_right>div{
+                position: absolute;
+                top: 285px;
+                right: 0;
+                width: 458px;
+                height: 318px;
+                background-color: rgb(238,238,214)
+            }
+            #bottom_right div ul{
+                font: 16px SimSun;
+                width: 400px;
+                list-style: none;
+            }
+            #bottom_right div ul li{
+                margin-top: 20px;
+            }
+            #bottom_right div ul li::before{
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border: #418c59 5px solid;
+                    border-top-color: transparent;
+                    border-left-color: transparent;
+                    border-right-color: transparent;
+                    float: left;
+                    margin: 5px;
+            }
+            #bottom_right div ul li span{
+                font: oblique 12px SimSun;
+                float: right;
+            }
+            #bottom_right_div1{
+                width: 260px;
+                height: 160px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: rgb(213,93,92);
+            }
+            #bottom_right_p1{
+                position: absolute;
+                left: 76px;
+                top: 32px;
+                height: 86px;
+                width: 0;
+                width: auto;
+                border-right: 2px solid #fff;
+            }
+            #bottom_right_0{
+                position: absolute;
+                left:10px;
+                font: 110px 'Microsoft YaHei';
+                color: #fff;
+                margin: 0;
+            }
+            #bottom_right_p2{
+                position: absolute;
+                top: 16px;
+                left: 86px;
+                font: oblique 21px SimHei;
+                color: #fff;
+            }
+            #bottom_right_p3{
+                position: absolute;
+                top: 76px;
+                left: 90px;
+                font: 12px SimHei;
+                color: #fff;
+            }
+            #bottom_right_div2{
+                position: absolute;
+                width: 180px;
+                height: 160px;
+                left: 260px;
+                bottom: 0;
+                padding: 0 0 0 10px;
+                font: Oblique 14px SimHei;
+                color: #5a5b5b;
+            }
+            #bottom_right_div2 span:nth-child(1){
+                font: 72px SimHei;
+                color: #d45d5c;
+                line-height: 14px;
+                float: left;
+                margin: 15px 0 -20px -40px;
+            }
+            #bottom_right_div2 span:nth-child(2){
+                font: 72px SimHei;
+                color: #d45d5c;
+                line-height: 14px;
+                float: right;
+                margin: 30px -20px -20px -40px;
+            }
+            #footer_right{
+                position: absolute;
+                bottom: 15px;
+                right: 46px;
+                font: 12px SimHei;
+                color: #d45d5c;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div id="left">
+                <span>ife.baidu.com</span>
+            </div>
+            <div id="right">
+                <span>2016.03</span>
+            </div>
+            <hr>
+        </header>
+        <main>
+            <section>
+                <figure id="figure1">
+                    <img src="hw6_top_left.jpg" id="figure1_1">
+                    <div id="figure1_2"></div>
+                    <div id="figure1_3"></div>
+                </figure>
+            </section>
+            <section id="top-right">
+                <hr>
+                <p id="p1">About</p>
+                <p id="p2">Technology</p>
+                <p id="p3">About technology about technology about technology</p>
+                <p id="p4">700</p>
+                <div>
+                    <p id="p5">3.2</p>
+                    <p id="p6">CSS</p>
+                    <p id="p7">CSSSSCCSCCSCSSC</p>   
+                </div>
+            </section>
+            <section id="middle">
+                <div id="middle_left">
+                    <p class="middle_head">What</p>
+                    <p class="middle_content">
+                        前端前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前端前前端前端前端前端
+                    </p>     
+                </div>
+                <div id="middle_right">
+                    <p class="middle_head">How</p>
+                    <p class="middle_content">
+                        前端前端前端前端前端前端前端前端前端前端前端前端前端前 
+                    </p>
+                </div>
+                <div id="middle_center">
+                    <p class="middle_head">When</p>
+                    <p class="middle_content">
+                        前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前前端前端前端前端前端前端前端前端前前端前端前
+                    </p>
+                </div>
+                <div id="middle_right_bottom">
+                <P>
+                    What--------<span>40%</span><br>
+                    What--------<span>30%</span><br>
+                    What--------<span>30%</span>
+                </P>
+                </div>
+            </section>
+            <section id="bottom_left">
+                <h1 id="bottom_left_h1e"><span>the</span> technology of front end</h1>
+                <h1 id="bottom_left_h1c">前端技术领域</h1>
+                <hr id="hottom_left_hr">
+                <p>前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端<img src='hw6_bottom_left.jpg' alt="bottom_left">前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+                </p>
+                <p>前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端</p>
+                <p>前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端</p>
+            </section>
+            <scetion id="bottom_right">
+                <figure>
+                    <img src='hw6_bottom_right.jpg' alt="bottom right">
+                    <div></div>
+                    <p>前端技术</p>
+                    <p>前端技术前端技术</p>
+                </figure>
+                <div>
+                    <ul>
+                        <li>前端前端前端前端前端前端....................<span>前端</span></li>
+                        <li>前端前端前端前端..........................<span>前端前</span></li>
+                        <li>前端前端前端前端前端前端前端................<span>前端</span></li>
+                    </ul>
+                    <div id="bottom_right_div1">
+                        <div id="bottom_right_p1">
+                        </div>
+                        <p id="bottom_right_0">0</p>
+                        <div id="bottom_right_p2">
+                            <p>ONE TWO <br>
+                            THREE FOUR FIVE</p>
+                        </div>
+                        <div id="bottom_right_p3">
+                            <p>hello world hello world <br>
+                            hello world</p>
+                        </div>
+                    </div>
+                    <div id="bottom_right_div2">
+                        <p><span>“</span> world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world<span>”</span></p>
+                    </div>
+                </div>
+            </scetion>
+        </main>
+        <footer>
+            <hr>
+            <div id="footer_right">
+                <span>ife.baidu.com</span>
+            </div>            
+        </footer>
+    </body>
+</html>
